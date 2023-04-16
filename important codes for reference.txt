@@ -1,0 +1,10 @@
+set the index --> data.set_index('column name',inplace=True)
+reset the index--> data.reset_index(drop=['column name'],inplace=True)
+
+# if there is seasonality then we need to import the seasonal decomposition
+from statsmodels.tsa.seasonal import seasonal_decompose
+seasonal decomposition--> decomposition=seasonal_decompose(data,period=12)
+fig=plt.figure()
+fig=decomposition.plot()
+fig.set_size_inches(12,10)
+plt.show()
